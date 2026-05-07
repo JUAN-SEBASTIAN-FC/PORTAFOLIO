@@ -1,0 +1,211 @@
+/* ── Experience Section ─────────────────────────────────────────────────────── */
+
+.experience-section {
+  padding: var(--space-2xl) 0;
+  position: relative;
+}
+
+/* Timeline wrapper */
+.experience-timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, transparent, var(--accent-primary), var(--accent-secondary), transparent);
+  transform: translateX(-50%);
+  opacity: 0.4;
+}
+
+/* Item layout */
+.experience-item {
+  display: grid;
+  grid-template-columns: 1fr 40px 1fr;
+  align-items: flex-start;
+  gap: var(--space-md);
+  opacity: 0;
+  transition: opacity 0.5s ease, translate 0.5s ease;
+}
+
+.experience-item.is-visible { opacity: 1; translate: 0 0; }
+
+.exp-left  { translate: -24px 0; }
+.exp-right { translate: 24px 0; }
+
+/* Left items: card on left side */
+.exp-left .exp-card  { grid-column: 1; grid-row: 1; }
+.exp-left .exp-dot   { grid-column: 2; grid-row: 1; }
+.exp-left::after     { content: ''; grid-column: 3; grid-row: 1; } /* spacer */
+
+/* Right items: card on right side */
+.exp-right .exp-dot  { grid-column: 2; grid-row: 1; }
+.exp-right .exp-card { grid-column: 3; grid-row: 1; }
+.exp-right::before   { content: ''; grid-column: 1; grid-row: 1; } /* spacer */
+
+/* Dot */
+.exp-dot {
+  display: flex;
+  justify-content: center;
+  padding-top: 1.2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.exp-dot-inner {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  box-shadow: 0 0 12px var(--glow-primary);
+  border: 2px solid var(--bg-primary);
+}
+
+/* Card */
+.exp-card {
+  padding: var(--space-lg);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.exp-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.3);
+}
+
+.exp-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-sm);
+  flex-wrap: wrap;
+}
+
+.exp-role {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.exp-company {
+  font-size: 0.9rem;
+  color: var(--accent-primary);
+  font-weight: 600;
+  margin-top: 0.15rem;
+}
+
+.exp-location {
+  color: var(--text-tertiary);
+  font-weight: 400;
+}
+
+.exp-card-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.4rem;
+  flex-shrink: 0;
+}
+
+.exp-period {
+  font-size: 0.8125rem;
+  color: var(--text-tertiary);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.exp-type-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.exp-type--full-time  { background: rgba(0,200,150,0.15); color: #00c896; border: 1px solid rgba(0,200,150,0.3); }
+.exp-type--freelance  { background: rgba(180,120,255,0.15); color: #b47aff; border: 1px solid rgba(180,120,255,0.3); }
+.exp-type--internship { background: rgba(255,180,60,0.15); color: #ffb43c; border: 1px solid rgba(255,180,60,0.3); }
+
+.exp-description {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin-bottom: var(--space-sm);
+}
+
+/* Achievements */
+.exp-achievements {
+  list-style: none;
+  margin: 0 0 var(--space-sm);
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.exp-achievement {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-start;
+}
+
+.exp-achievement-dot {
+  color: var(--accent-primary);
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* Tags */
+.exp-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.exp-tag {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  color: var(--text-tertiary);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-full);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .timeline-line { left: 20px; }
+
+  .experience-item {
+    grid-template-columns: 40px 1fr;
+  }
+
+  .exp-left .exp-card,
+  .exp-right .exp-card {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .exp-left .exp-dot,
+  .exp-right .exp-dot {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  /* Remove spacer pseudo-elements on mobile */
+  .exp-left::after,
+  .exp-right::before { display: none; }
+
+  .exp-left  { translate: 0 24px; }
+  .exp-right { translate: 0 24px; }
+}

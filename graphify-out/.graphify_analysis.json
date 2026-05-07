@@ -1,0 +1,188 @@
+{
+  "communities": {
+    "0": [
+      "app",
+      "data_experience",
+      "experience",
+      "footer",
+      "header"
+    ],
+    "1": [
+      "cavebackground",
+      "dragonsequence",
+      "hero",
+      "pulseindicator",
+      "stalactites"
+    ],
+    "2": [
+      "about",
+      "contact",
+      "data_skills",
+      "scroll_animation_hook",
+      "skills"
+    ],
+    "3": [
+      "data_projects",
+      "projects"
+    ],
+    "4": [
+      "vite_config"
+    ],
+    "5": [
+      "eslint_config"
+    ],
+    "6": [
+      "main_entry"
+    ]
+  },
+  "cohesion": {
+    "0": 0.4,
+    "1": 0.4,
+    "2": 0.4,
+    "3": 1.0,
+    "4": 1.0,
+    "5": 1.0,
+    "6": 1.0
+  },
+  "gods": [
+    {
+      "id": "app",
+      "label": "App",
+      "degree": 8
+    },
+    {
+      "id": "scroll_animation_hook",
+      "label": "useScrollAnimation",
+      "degree": 6
+    },
+    {
+      "id": "hero",
+      "label": "Hero",
+      "degree": 5
+    },
+    {
+      "id": "skills",
+      "label": "Skills",
+      "degree": 3
+    },
+    {
+      "id": "experience",
+      "label": "Experience",
+      "degree": 3
+    },
+    {
+      "id": "projects",
+      "label": "Projects",
+      "degree": 3
+    },
+    {
+      "id": "about",
+      "label": "About",
+      "degree": 2
+    },
+    {
+      "id": "contact",
+      "label": "Contact",
+      "degree": 2
+    },
+    {
+      "id": "cavebackground",
+      "label": "CaveBackground",
+      "degree": 2
+    },
+    {
+      "id": "header",
+      "label": "Header",
+      "degree": 1
+    }
+  ],
+  "surprises": [
+    {
+      "source": "App",
+      "target": "About",
+      "source_files": [
+        "src/App.jsx",
+        "src/components/sections/About.jsx"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "renders",
+      "why": "bridges separate communities; peripheral node `About` unexpectedly reaches hub `App`"
+    },
+    {
+      "source": "App",
+      "target": "Contact",
+      "source_files": [
+        "src/App.jsx",
+        "src/components/sections/Contact.jsx"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "renders",
+      "why": "bridges separate communities; peripheral node `Contact` unexpectedly reaches hub `App`"
+    },
+    {
+      "source": "Hero",
+      "target": "useScrollAnimation",
+      "source_files": [
+        "src/components/sections/Hero.jsx",
+        "src/hooks/useScrollAnimation.js"
+      ],
+      "confidence": "INFERRED",
+      "relation": "uses",
+      "why": "inferred connection - not explicitly stated in source; bridges separate communities"
+    },
+    {
+      "source": "PulseIndicator",
+      "target": "Hero",
+      "source_files": [
+        "src/components/ui/PulseIndicator.jsx",
+        "src/components/sections/Hero.jsx"
+      ],
+      "confidence": "INFERRED",
+      "relation": "used_by",
+      "why": "inferred connection - not explicitly stated in source; peripheral node `PulseIndicator` unexpectedly reaches hub `Hero`"
+    },
+    {
+      "source": "About",
+      "target": "useScrollAnimation",
+      "source_files": [
+        "src/components/sections/About.jsx",
+        "src/hooks/useScrollAnimation.js"
+      ],
+      "confidence": "INFERRED",
+      "relation": "uses",
+      "why": "inferred connection - not explicitly stated in source; peripheral node `About` unexpectedly reaches hub `useScrollAnimation`"
+    }
+  ],
+  "questions": [
+    {
+      "type": "bridge_node",
+      "question": "Why does `App` connect `Community 0` to `Community 1`, `Community 2`, `Community 3`?",
+      "why": "High betweenness centrality (0.360) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `Hero` connect `Community 1` to `Community 0`, `Community 2`?",
+      "why": "High betweenness centrality (0.313) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `useScrollAnimation` connect `Community 2` to `Community 0`, `Community 1`, `Community 3`?",
+      "why": "High betweenness centrality (0.190) - this node is a cross-community bridge."
+    },
+    {
+      "type": "verify_inferred",
+      "question": "Are the 6 inferred relationships involving `useScrollAnimation` (e.g. with `Hero` and `About`) actually correct?",
+      "why": "`useScrollAnimation` has 6 INFERRED edges - model-reasoned connections that need verification."
+    },
+    {
+      "type": "verify_inferred",
+      "question": "Are the 2 inferred relationships involving `Hero` (e.g. with `useScrollAnimation` and `PulseIndicator`) actually correct?",
+      "why": "`Hero` has 2 INFERRED edges - model-reasoned connections that need verification."
+    },
+    {
+      "type": "isolated_nodes",
+      "question": "What connects `Header`, `Footer`, `DragonSequence` to the rest of the system?",
+      "why": "11 weakly-connected nodes found - possible documentation gaps or missing edges."
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+.pulse-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: var(--surface-container-high);
+  border: 1px solid rgba(111, 234, 255, 0.15);
+}
+
+.pulse-indicator__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.pulse-indicator__label {
+  color: var(--on-surface-variant);
+}
+
+/* Green variant */
+.pulse-indicator--green .pulse-indicator__dot {
+  background: #4ade80;
+  box-shadow: 0 0 6px rgba(74, 222, 128, 0.6);
+  animation: pulse-dot 1.8s ease-in-out infinite;
+}
+.pulse-indicator--green .pulse-indicator__label {
+  color: #4ade80;
+}
+
+/* Cyan variant */
+.pulse-indicator--cyan .pulse-indicator__dot {
+  background: var(--primary-container);
+  box-shadow: 0 0 6px rgba(111, 234, 255, 0.6);
+  animation: pulse-dot 1.8s ease-in-out infinite;
+}
+.pulse-indicator--cyan .pulse-indicator__label {
+  color: var(--primary-container);
+}
+
+/* Gold variant */
+.pulse-indicator--gold .pulse-indicator__dot {
+  background: var(--tertiary-container);
+  box-shadow: 0 0 6px rgba(250, 213, 136, 0.6);
+  animation: pulse-dot 1.8s ease-in-out infinite;
+}
+.pulse-indicator--gold .pulse-indicator__label {
+  color: var(--tertiary-container);
+}
+
+[data-theme="light"] .pulse-indicator {
+  background: var(--surface-container-high);
+  border-color: rgba(0, 104, 117, 0.15);
+}

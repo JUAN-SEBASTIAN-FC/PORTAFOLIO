@@ -1,0 +1,296 @@
+{
+  "nodes": [
+    {
+      "id": "app",
+      "label": "App",
+      "file_type": "code",
+      "source_file": "src/App.jsx",
+      "source_location": null
+    },
+    {
+      "id": "hero",
+      "label": "Hero",
+      "file_type": "code",
+      "source_file": "src/components/sections/Hero.jsx",
+      "source_location": null
+    },
+    {
+      "id": "about",
+      "label": "About",
+      "file_type": "code",
+      "source_file": "src/components/sections/About.jsx",
+      "source_location": null
+    },
+    {
+      "id": "skills",
+      "label": "Skills",
+      "file_type": "code",
+      "source_file": "src/components/sections/Skills.jsx",
+      "source_location": null
+    },
+    {
+      "id": "experience",
+      "label": "Experience",
+      "file_type": "code",
+      "source_file": "src/components/sections/Experience.jsx",
+      "source_location": null
+    },
+    {
+      "id": "projects",
+      "label": "Projects",
+      "file_type": "code",
+      "source_file": "src/components/sections/Projects.jsx",
+      "source_location": null
+    },
+    {
+      "id": "contact",
+      "label": "Contact",
+      "file_type": "code",
+      "source_file": "src/components/sections/Contact.jsx",
+      "source_location": null
+    },
+    {
+      "id": "header",
+      "label": "Header",
+      "file_type": "code",
+      "source_file": "src/components/layout/Header.jsx",
+      "source_location": null
+    },
+    {
+      "id": "footer",
+      "label": "Footer",
+      "file_type": "code",
+      "source_file": "src/components/layout/Footer.jsx",
+      "source_location": null
+    },
+    {
+      "id": "cavebackground",
+      "label": "CaveBackground",
+      "file_type": "code",
+      "source_file": "src/components/ui/CaveBackground.jsx",
+      "source_location": null
+    },
+    {
+      "id": "dragonsequence",
+      "label": "DragonSequence",
+      "file_type": "code",
+      "source_file": "src/components/ui/DragonSequence.jsx",
+      "source_location": null
+    },
+    {
+      "id": "pulseindicator",
+      "label": "PulseIndicator",
+      "file_type": "code",
+      "source_file": "src/components/ui/PulseIndicator.jsx",
+      "source_location": null
+    },
+    {
+      "id": "stalactites",
+      "label": "Stalactites",
+      "file_type": "code",
+      "source_file": "src/components/ui/Stalactites.jsx",
+      "source_location": null
+    },
+    {
+      "id": "data_experience",
+      "label": "Experience Data",
+      "file_type": "code",
+      "source_file": "src/data/experience.js",
+      "source_location": null
+    },
+    {
+      "id": "data_projects",
+      "label": "Projects Data",
+      "file_type": "code",
+      "source_file": "src/data/projects.js",
+      "source_location": null
+    },
+    {
+      "id": "data_skills",
+      "label": "Skills Data",
+      "file_type": "code",
+      "source_file": "src/data/skills.js",
+      "source_location": null
+    },
+    {
+      "id": "scroll_animation_hook",
+      "label": "useScrollAnimation",
+      "file_type": "code",
+      "source_file": "src/hooks/useScrollAnimation.js",
+      "source_location": null
+    },
+    {
+      "id": "vite_config",
+      "label": "Vite Config",
+      "file_type": "code",
+      "source_file": "vite.config.js",
+      "source_location": null
+    },
+    {
+      "id": "eslint_config",
+      "label": "ESLint Config",
+      "file_type": "code",
+      "source_file": "eslint.config.js",
+      "source_location": null
+    },
+    {
+      "id": "main_entry",
+      "label": "Main Entry",
+      "file_type": "code",
+      "source_file": "src/main.jsx",
+      "source_location": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "app",
+      "target": "header",
+      "relation": "renders",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "app",
+      "target": "hero",
+      "relation": "renders",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "app",
+      "target": "about",
+      "relation": "renders",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "app",
+      "target": "skills",
+      "relation": "renders",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "app",
+      "target": "experience",
+      "relation": "renders",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "app",
+      "target": "projects",
+      "relation": "renders",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "app",
+      "target": "contact",
+      "relation": "renders",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "app",
+      "target": "footer",
+      "relation": "renders",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "hero",
+      "target": "cavebackground",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "hero",
+      "target": "dragonsequence",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "experience",
+      "target": "data_experience",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "projects",
+      "target": "data_projects",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "skills",
+      "target": "data_skills",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "hero",
+      "target": "scroll_animation_hook",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7
+    },
+    {
+      "source": "about",
+      "target": "scroll_animation_hook",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7
+    },
+    {
+      "source": "skills",
+      "target": "scroll_animation_hook",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7
+    },
+    {
+      "source": "experience",
+      "target": "scroll_animation_hook",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7
+    },
+    {
+      "source": "projects",
+      "target": "scroll_animation_hook",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7
+    },
+    {
+      "source": "contact",
+      "target": "scroll_animation_hook",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7
+    },
+    {
+      "source": "pulseindicator",
+      "target": "hero",
+      "relation": "used_by",
+      "confidence": "INFERRED",
+      "confidence_score": 0.6
+    },
+    {
+      "source": "stalactites",
+      "target": "cavebackground",
+      "relation": "complements",
+      "confidence": "INFERRED",
+      "confidence_score": 0.6
+    }
+  ],
+  "hyperedges": [],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

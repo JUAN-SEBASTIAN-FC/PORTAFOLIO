@@ -1,0 +1,215 @@
+.dragon-seq {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+}
+
+/* ── Canvas ── */
+.dragon-seq__canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ── Loading ── */
+.dragon-seq__loading {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background: var(--surface-container-lowest);
+  z-index: 10;
+}
+
+.dragon-seq__loading-bar {
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary-container), var(--primary-dim));
+  border-radius: 9999px;
+  transition: width 0.2s ease;
+  max-width: 260px;
+  width: 0%;
+  box-shadow: 0 0 12px rgba(111, 234, 255, 0.4);
+}
+
+.dragon-seq__loading-text {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--on-surface-variant);
+  font-family: var(--font-body);
+}
+
+/* ── Flash on kill ── */
+.dragon-seq__flash {
+  position: absolute;
+  inset: 0;
+  background: rgba(111, 234, 255, 0.35);
+  z-index: 20;
+  animation: flash-out 0.6s ease forwards;
+}
+
+@keyframes flash-out {
+  0%   { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* ── Crosshair ── */
+.dragon-seq__crosshair {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -55%);
+  width: 48px;
+  height: 48px;
+  pointer-events: none;
+}
+
+.dragon-seq__crosshair span {
+  position: absolute;
+  background: rgba(111, 234, 255, 0.7);
+  box-shadow: 0 0 6px rgba(111, 234, 255, 0.4);
+}
+
+.dragon-seq__crosshair span:nth-child(1) {
+  top: 50%; left: 0;   width: 40%; height: 1px; transform: translateY(-50%);
+}
+.dragon-seq__crosshair span:nth-child(2) {
+  top: 50%; right: 0;  width: 40%; height: 1px; transform: translateY(-50%);
+}
+.dragon-seq__crosshair span:nth-child(3) {
+  left: 50%; top: 0;   height: 40%; width: 1px; transform: translateX(-50%);
+}
+.dragon-seq__crosshair span:nth-child(4) {
+  left: 50%; bottom: 0; height: 40%; width: 1px; transform: translateX(-50%);
+}
+
+/* ── Controls ── */
+.dragon-seq__controls {
+  position: absolute;
+  bottom: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  z-index: 5;
+}
+
+.dragon-seq__btn {
+  padding: 0.65rem 1.75rem;
+  border-radius: 9999px;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.25s ease;
+}
+
+.dragon-seq__btn--fire {
+  background: var(--primary-container);
+  color: var(--on-primary);
+  box-shadow: 0 0 20px rgba(111, 234, 255, 0.3);
+}
+.dragon-seq__btn--fire:hover {
+  box-shadow: 0 0 40px rgba(111, 234, 255, 0.5);
+  transform: scale(1.05);
+}
+
+.dragon-seq__btn--reset {
+  background: rgba(250, 213, 136, 0.15);
+  color: var(--tertiary-container);
+  border: 1px solid rgba(250, 213, 136, 0.4);
+  box-shadow: 0 0 20px rgba(250, 213, 136, 0.15);
+}
+.dragon-seq__btn--reset:hover {
+  background: rgba(250, 213, 136, 0.25);
+  box-shadow: 0 0 40px rgba(250, 213, 136, 0.3);
+  transform: scale(1.05);
+}
+
+.dragon-seq__btn-icon {
+  font-size: 1rem;
+}
+
+.dragon-seq__status {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--primary-container);
+  background: rgba(5, 33, 57, 0.7);
+  padding: 0.5rem 1.2rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(111, 234, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.dragon-seq__pulse {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--primary-container);
+  animation: pulse-dot 0.7s ease-in-out infinite;
+}
+
+/* ── Weapon silhouette ── */
+.dragon-seq__weapon {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 280px;
+  opacity: 0.85;
+  transform: translateY(20%) translateX(10%);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.dragon-seq__weapon--fired {
+  animation: recoil 0.2s ease;
+}
+
+@keyframes recoil {
+  0%   { transform: translateY(20%) translateX(10%) rotate(0deg); }
+  30%  { transform: translateY(30%) translateX(15%) rotate(3deg); }
+  100% { transform: translateY(20%) translateX(10%) rotate(0deg); }
+}
+
+/* ── Muzzle flash ── */
+.dragon-seq__muzzle-flash {
+  position: absolute;
+  bottom: 68px;
+  right: 72px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,240,100,0.95) 0%, rgba(111,234,255,0.4) 50%, transparent 70%);
+  animation: muzzle 0.12s ease-in-out infinite alternate;
+  pointer-events: none;
+  z-index: 5;
+}
+
+@keyframes muzzle {
+  from { transform: scale(0.8); opacity: 0.7; }
+  to   { transform: scale(1.4); opacity: 1; }
+}
+
+/* ── State modifiers ── */
+.dragon-seq--dead .dragon-seq__canvas {
+  filter: saturate(0.2) brightness(0.7);
+  transition: filter 0.8s ease;
+}

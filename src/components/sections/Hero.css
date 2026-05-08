@@ -2,14 +2,15 @@
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding-top: 100px;
+  padding-top: 80px;
   overflow: hidden;
+  position: relative;
 }
 
 .hero__inner {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-xl);
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: var(--space-3xl);
   align-items: center;
   width: 100%;
 }
@@ -18,19 +19,19 @@
 .hero__content {
   display: flex;
   flex-direction: column;
-  gap: var(--space-lg);
+  gap: var(--space-xl);
   position: relative;
   z-index: 2;
 }
 
 .hero__name {
-  font-family: var(--font-headline);
-  font-size: clamp(2.2rem, 4.5vw, 4.2rem);
-  font-weight: 300;
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
   line-height: 1.1;
   color: var(--on-surface);
-  margin-top: 0.5rem;
-  letter-spacing: 0.03em;
+  margin: 0;
+  letter-spacing: -0.02em;
 }
 
 .hero__meta {
@@ -40,74 +41,81 @@
 }
 
 .hero__role {
-  font-family: var(--font-headline);
-  font-size: clamp(1rem, 2vw, 1.35rem);
+  font-family: var(--font-heading);
+  font-size: clamp(1.05rem, 2.2vw, 1.4rem);
   font-weight: 400;
   font-style: italic;
   color: var(--on-surface);
-  line-height: 1.5;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
 }
 
 .hero__bio {
-  font-size: 0.95rem;
+  font-size: 1rem;
   line-height: 1.8;
   color: var(--on-surface-variant);
-  max-width: 480px;
+  max-width: 520px;
+  font-weight: 400;
+  margin: 0;
 }
 
 .hero__actions {
   display: flex;
   gap: var(--space-md);
   flex-wrap: wrap;
+  margin-top: var(--space-lg);
 }
 
-/* ── Stats ── */
+/* ── Stats — Professional & Clean ── */
 .hero__stats {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
-  padding-top: var(--space-md);
+  gap: 2rem;
+  padding-top: var(--space-lg);
   border-top: 1px solid var(--outline-variant);
+  margin-top: var(--space-lg);
 }
 
 .hero__stat {
   display: flex;
   flex-direction: column;
-  gap: 0.2rem;
+  gap: 0.3rem;
 }
 
 .hero__stat strong {
-  font-family: var(--font-headline);
-  font-size: 1.6rem;
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
   font-weight: 700;
-  color: var(--primary-container);
-  text-shadow: 0 0 16px rgba(111, 234, 255, 0.3);
+  color: var(--primary);
+  text-shadow: 0 0 12px rgba(0, 217, 255, 0.25);
   line-height: 1;
+  letter-spacing: -0.01em;
 }
 
 [data-theme="light"] .hero__stat strong {
-  text-shadow: 0 0 12px rgba(0, 104, 117, 0.3);
+  text-shadow: 0 0 8px rgba(0, 107, 122, 0.2);
 }
 
 .hero__stat span {
-  font-size: 0.72rem;
-  letter-spacing: 0.08em;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--on-surface-variant);
-  font-weight: 500;
+  color: var(--text-tertiary);
+  font-weight: 600;
 }
 
 .hero__stat-divider {
   width: 1px;
-  height: 36px;
+  height: 40px;
   background: var(--outline-variant);
   flex-shrink: 0;
+  opacity: 0.5;
 }
 
-/* ── Dragon ── */
+/* ── Dragon Section ── */
 .hero__dragon-wrapper {
   position: relative;
-  height: 520px;
+  height: 500px;
   border-radius: var(--radius-xl);
   overflow: hidden;
 }
@@ -117,7 +125,7 @@
   inset: -20px;
   background: radial-gradient(
     ellipse 60% 50% at 50% 50%,
-    rgba(111, 234, 255, 0.06) 0%,
+    rgba(0, 217, 255, 0.08) 0%,
     transparent 70%
   );
   pointer-events: none;
@@ -128,68 +136,125 @@
 [data-theme="light"] .hero__dragon-glow {
   background: radial-gradient(
     ellipse 60% 50% at 50% 50%,
-    rgba(0, 104, 117, 0.05) 0%,
+    rgba(0, 107, 122, 0.06) 0%,
     transparent 70%
   );
 }
 
-/* ── Scroll hint ── */
+/* ── Scroll Hint ── */
 .hero__scroll-hint {
   position: absolute;
-  bottom: 2.5rem;
+  bottom: 3rem;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.75rem;
   animation: float 2.5s ease-in-out infinite;
 }
 
 .hero__scroll-line {
   width: 1px;
-  height: 48px;
-  background: linear-gradient(to bottom, transparent, var(--primary-container));
-  border-radius: 9999px;
+  height: 24px;
+  background: linear-gradient(180deg, var(--accent-primary), transparent);
+  border-radius: 1px;
+  animation: slide-down 1.5s ease-in-out infinite;
+}
+
+@keyframes slide-down {
+  0% { transform: translateY(-12px); opacity: 1; }
+  100% { transform: translateY(12px); opacity: 0; }
 }
 
 .hero__scroll-label {
-  font-size: 0.65rem;
-  letter-spacing: 0.2em;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--on-surface-variant);
-  font-family: var(--font-body);
+  color: var(--text-tertiary);
 }
 
-/* ── Responsive ── */
+/* ── RESPONSIVE ── */
 @media (max-width: 1024px) {
-  .hero__dragon-wrapper { height: 420px; }
+  .hero__inner {
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
+  }
+
+  .hero__dragon-wrapper {
+    height: 400px;
+  }
+
+  .hero {
+    padding-top: 60px;
+  }
 }
 
 @media (max-width: 768px) {
-  .hero__inner {
-    grid-template-columns: 1fr;
-    text-align: center;
+  .hero {
+    min-height: 85vh;
+    padding-top: 60px;
   }
 
-  .hero__name { font-size: clamp(2rem, 7vw, 3rem); }
+  .hero__name {
+    font-size: clamp(2rem, 4vw, 2.5rem);
+  }
 
-  .hero__bio  { max-width: 100%; }
+  .hero__role {
+    font-size: 1rem;
+  }
 
-  .hero__stats { justify-content: center; }
-
-  .hero__actions { justify-content: center; }
+  .hero__stats {
+    gap: 1.5rem;
+  }
 
   .hero__dragon-wrapper {
-    height: 340px;
-    order: -1;
+    height: 320px;
   }
 
-  .hero__scroll-hint { display: none; }
+  .hero__actions {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
 }
 
 @media (max-width: 480px) {
-  .hero__dragon-wrapper { height: 270px; }
-  .hero__stats { gap: 1rem; }
-  .hero__stat strong { font-size: 1.3rem; }
+  .hero {
+    min-height: auto;
+    padding-top: 40px;
+  }
+
+  .hero__name {
+    font-size: 1.75rem;
+  }
+
+  .hero__role {
+    font-size: 0.95rem;
+  }
+
+  .hero__bio {
+    font-size: 0.95rem;
+  }
+
+  .hero__stats {
+    gap: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .hero__stat strong {
+    font-size: 1.4rem;
+  }
+
+  .hero__stat-divider {
+    height: 30px;
+  }
+
+  .hero__dragon-wrapper {
+    display: none;
+  }
 }
+

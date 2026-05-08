@@ -4,6 +4,7 @@
   position: relative;
   border-top: 1px solid var(--glass-border);
   overflow: hidden;
+  background: var(--surface);
 }
 
 .footer-top-gradient {
@@ -44,8 +45,9 @@
 
 .footer-logo-mark {
   font-family: var(--font-heading);
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 800;
+  color: var(--accent-primary);
 }
 
 .footer-logo-name {
@@ -75,7 +77,7 @@
   transition: color var(--transition-fast);
 }
 
-.footer-nav-link:hover { color: var(--accent-primary); }
+.footer-nav-link:hover { color: var(--accent-primary); text-decoration: underline; text-underline-offset: 4px; }
 
 /* Scroll top */
 .footer-scroll-top {

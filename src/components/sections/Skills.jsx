@@ -113,10 +113,10 @@ export default function Skills() {
         {/* Stats row */}
         <div className="skills-stats">
           {[
-            { value: '5+', label: 'Años de experiencia' },
-            { value: '20+', label: 'Proyectos entregados' },
-            { value: '10+', label: 'Tecnologías dominadas' },
-            { value: '3', label: 'Categorías de expertise' },
+            { value: '18',      label: 'Años' },
+            { value: '4',       label: 'Proyectos publicados' },
+            { value: '3',       label: 'Categorías de tecnología' },
+            { value: 'Univalle', label: 'Universidad del Valle' },
           ].map((stat) => (
             <div key={stat.label} className="skills-stat glass-panel">
               <span className="skills-stat-value gradient-text">{stat.value}</span>

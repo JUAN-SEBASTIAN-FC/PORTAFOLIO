@@ -20,20 +20,20 @@ export default function Hero() {
             <span className="section-label">Portafolio</span>
             <h1 className="hero__name">
               Juan Sebastián<br />
-              <span className="text-glow">Vaya Cañarte</span>
+              <span className="text-glow">Falla Cañarte</span>
             </h1>
           </div>
 
           <div ref={subtitleRef} className="hero__meta animate-fade-up delay-2">
             <PulseIndicator label="Disponible para trabajo" variant="green" />
             <p className="hero__role">
-              Full Stack Developer<br />
-              <span className="text-gold">& AI Integrator</span>
+              Desarrollador de Software<br />
+              <span className="text-gold">Universidad del Valle</span>
             </p>
             <p className="hero__bio">
-              Construyo productos digitales con arquitectura limpia, interfaces
-              inmersivas y experiencias que marcan la diferencia.
-              Especialista en React, Node.js e inteligencia artificial aplicada.
+              Diseño y construyo aplicaciones web reales: desde la interfaz hasta
+              el servidor. Me apasiona escribir código limpio que resuelva
+              problemas concretos.
             </p>
           </div>
 
@@ -49,18 +49,18 @@ export default function Hero() {
           {/* Stats */}
           <div className="hero__stats animate-fade-up delay-4">
             <div className="hero__stat">
-              <strong>5+</strong>
-              <span>Años de experiencia</span>
+              <strong>18</strong>
+              <span>Años</span>
             </div>
             <div className="hero__stat-divider" aria-hidden="true" />
             <div className="hero__stat">
-              <strong>30+</strong>
-              <span>Proyectos entregados</span>
+              <strong>4</strong>
+              <span>Proyectos publicados</span>
             </div>
             <div className="hero__stat-divider" aria-hidden="true" />
             <div className="hero__stat">
-              <strong>15+</strong>
-              <span>Tecnologías dominadas</span>
+              <strong>Tuluá</strong>
+              <span>Colombia</span>
             </div>
           </div>
         </div>

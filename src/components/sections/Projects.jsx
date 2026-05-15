@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import { useRef, useEffect } from 'react';
 import { projects } from '../../data/projects';
 import './Projects.css';
 
@@ -23,6 +23,13 @@ function ProjectCard({ project, index }) {
     >
       {/* Gradient accent */}
       <div className="project-card-accent" />
+
+      {/* Image */}
+      {project.image && (
+        <div className="project-card-image-wrapper">
+          <img src={project.image} alt={project.title} className="project-card-image" loading="lazy" />
+        </div>
+      )}
 
       {/* Header */}
       <div className="project-card-header">
@@ -63,6 +70,9 @@ function ProjectCard({ project, index }) {
 
       {/* Body */}
       <h3 className="project-title">{project.title}</h3>
+      {project.subtitle && (
+        <p className="project-subtitle">{project.subtitle}</p>
+      )}
       <p className="project-description">{project.description}</p>
 
       {/* Tags */}
@@ -76,10 +86,6 @@ function ProjectCard({ project, index }) {
 }
 
 export default function Projects() {
-  const [filter, setFilter] = useState('all');
-  const filtered = filter === 'featured'
-    ? projects.filter((p) => p.featured)
-    : projects;
 
   return (
     <section id="proyectos" className="projects-section">
@@ -96,26 +102,11 @@ export default function Projects() {
           </p>
         </div>
 
-        {/* Filter controls */}
-        <div className="projects-filter" role="group" aria-label="Filtrar proyectos">
-          {[
-            { id: 'all',      label: 'Todos' },
-            { id: 'featured', label: 'Destacados' },
-          ].map((f) => (
-            <button
-              key={f.id}
-              className={`filter-btn${filter === f.id ? ' active' : ''}`}
-              onClick={() => setFilter(f.id)}
-              aria-pressed={filter === f.id}
-            >
-              {f.label}
-            </button>
-          ))}
-        </div>
+
 
         {/* Grid */}
         <div className="projects-grid">
-          {filtered.map((project, i) => (
+          {projects.map((project, i) => (
             <ProjectCard key={project.id} project={project} index={i} />
           ))}
         </div>
@@ -123,7 +114,7 @@ export default function Projects() {
         {/* CTA */}
         <div className="projects-cta">
           <a
-            href="https://github.com/juansvaya"
+            href="https://github.com/JUAN-SEBASTIAN-FC"
             target="_blank"
             rel="noopener noreferrer"
             className="btn btn-outline"

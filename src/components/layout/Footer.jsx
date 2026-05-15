@@ -23,10 +23,10 @@ export default function Footer() {
         <div className="footer-brand">
           <button className="footer-logo" onClick={scrollTop} aria-label="Volver al inicio">
             <span className="footer-logo-mark gradient-text">JS</span>
-            <span className="footer-logo-name">Juan&nbsp;Svaya</span>
+            <span className="footer-logo-name">Juan&nbsp;Sebastián</span>
           </button>
           <p className="footer-tagline">
-            Desarrollador Full Stack · Cali, Colombia
+            Desarrollador de Software · Tuluá, Colombia
           </p>
         </div>
 
@@ -55,7 +55,7 @@ export default function Footer() {
       <div className="footer-bottom">
         <div className="container footer-bottom-inner">
           <p className="footer-copy">
-            © {year} Juan Svaya · Todos los derechos reservados.
+            © {year} Juan Sebastián Falla Cañarte · Todos los derechos reservados.
           </p>
           <p className="footer-made-with">
             Hecho con <span className="footer-heart" aria-label="amor">♥</span> y mucho café

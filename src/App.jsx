@@ -18,7 +18,7 @@ import Contact    from './components/sections/Contact';
 
 function App() {
   const [theme, setTheme] = useState(() => {
-    return localStorage.getItem('portfolio-theme') || 'dark';
+    return localStorage.getItem('portfolio-theme') || 'light';
   });
 
   // Apply theme to root element

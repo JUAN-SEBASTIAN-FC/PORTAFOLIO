@@ -2,11 +2,24 @@
 
 export const projects = [
   {
+    id: 5,
+    title: 'FlowSpace ✨',
+    subtitle: 'SaaS Dashboard Administrativo',
+    description:
+      'Dashboard SaaS moderno y premium para la gestión administrativa empresarial. Destaca por su UI/UX sofisticada, diseño completamente responsivo y micro-interacciones fluidas, brindando una experiencia de usuario de primer nivel.',
+    image: '/imagenes/flowspace.png',
+    tags: ['React 19', 'Vite 8', 'Tailwind v4', 'Recharts', 'Lucide'],
+    github: 'https://github.com/JUAN-SEBASTIAN-FC/flowSpace',
+    live: 'https://juan-sebastian-fc.github.io/flowSpace/',
+    featured: true,
+    year: '2026',
+  },
+  {
     id: 1,
     title: 'MicroMarket',
     subtitle: 'La Red de Misiones Técnicas de Próxima Generación',
     description:
-      'Plataforma descentralizada (Nexus Network) para la publicación, gestión y ejecución de tareas técnicas y misiones especializadas. Conecta a "Operadores" con misiones críticas en tiempo real, con sistema de verificación de perfiles, chat integrado, métricas de rendimiento y soporte para modo oscuro con estética Glassmorphism.',
+      'Plataforma descentralizada B2B para misiones técnicas. Conecta operadores con tareas en tiempo real, incluyendo chat, métricas y verificación de perfiles bajo estética Glassmorphism.',
     image: '/imagenes/micromarket.png',
     tags: ['React 19', 'TypeScript', 'Vite', 'Firebase', 'Tailwind CSS', 'Framer Motion'],
     github: 'https://github.com/JUAN-SEBASTIAN-FC/micromarket',
@@ -19,7 +32,7 @@ export const projects = [
     title: 'VeraBio',
     subtitle: 'Adquisición Tecnológica de Insumos Médicos Exclusivos',
     description:
-      'Plataforma B2B de red cerrada para la compra de instrumental, suministros sanitarios y equipamiento hospitalario. Opera bajo arquitectura tri-partita con roles de Especialista, Proveedor y Administrador. Construida sobre un Design System propio con Glassmorphism, motor de partículas en Canvas y soporte completo para modo oscuro.',
+      'Plataforma B2B de insumos médicos con arquitectura de red cerrada y roles tri-partitos. Destaca por su Design System propio con motor de gravedad interactivo en Canvas.',
     image: '/imagenes/verabio.png',
     tags: ['React 18', 'Vite', 'React Router DOM', 'Lucide React', 'Canvas API', 'CSS3'],
     github: 'https://github.com/JUAN-SEBASTIAN-FC/verabio',
@@ -32,7 +45,7 @@ export const projects = [
     title: 'Aura Stream',
     subtitle: 'Reproductor de Música Moderno',
     description:
-      'Reproductor de música moderno, minimalista y ligero para el navegador. Permite subir archivos de audio locales (.mp3, .wav) y reproducirlos al instante sin backend. Incluye modo claro/oscuro, lista de favoritos, búsqueda dinámica por título o artista y controles completos de playback con barra de progreso y volumen.',
+      'Reproductor de música local minimalista. Permite carga de archivos y reproducción en el navegador sin backend, con soporte para temas oscuros, lista de favoritos y búsqueda en tiempo real.',
     image: '/imagenes/reproductor-musica.png',
     tags: ['React 19', 'Vite', 'Context API', 'CSS3', 'Lucide React'],
     github: 'https://github.com/JUAN-SEBASTIAN-FC/reproductor-de-musica',
@@ -45,7 +58,7 @@ export const projects = [
     title: 'Calculadora Científica',
     subtitle: 'Suite Matemática & Motor Gráfico',
     description:
-      'Suite matemática de alto rendimiento con calculadora científica (BigNumber 64-bit), motor de gráficos SVG interactivo con panning y zoom libre, y arquitectura de matrices NxM en tiempo real. Diseño "Tech Premium" con Glassmorphism, partículas 3D interactivas y transición nativa entre temas oscuro y claro.',
+      'Suite matemática de alta precisión (64-bit) con motor gráfico SVG interactivo para planos cartesianos con paneo y zoom, y resolución de matrices dinámicas NxM en tiempo real.',
     image: '/imagenes/calculadora-cientifica.png',
     tags: ['React 18', 'Vite', 'math.js', 'Zustand', 'SVG', 'CSS3'],
     github: 'https://github.com/JUAN-SEBASTIAN-FC/calculadora-cientifica',

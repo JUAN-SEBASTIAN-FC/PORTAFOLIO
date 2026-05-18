@@ -1,0 +1,122 @@
+.certificates-page {
+  min-height: 100vh;
+  padding-top: 120px; /* Space for the fixed header */
+  padding-bottom: 80px;
+  position: relative;
+  z-index: 2;
+}
+
+.certificates__header {
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+}
+
+.back-btn svg {
+  transition: transform 0.3s ease;
+}
+
+.back-btn:hover svg {
+  transform: translateX(-4px);
+}
+
+.certificates__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.cert-card {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  gap: 1.5rem;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.cert-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 
+    0 10px 30px -10px rgba(0, 0, 0, 0.5),
+    0 0 20px -5px var(--primary-color);
+}
+
+.cert-card__icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(var(--primary-rgb), 0.1);
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  margin-bottom: 0.5rem;
+}
+
+.cert-card__content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.cert-card__title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 0.25rem;
+}
+
+.cert-card__inst {
+  font-size: 0.875rem;
+  color: var(--primary-color);
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.cert-card__desc {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.cert-card__actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: auto;
+}
+
+.btn-sm {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  min-height: auto;
+  border-radius: 8px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .certificates-page {
+    padding-top: 100px;
+  }
+  
+  .certificates__grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .cert-card {
+    padding: 1.5rem;
+  }
+}

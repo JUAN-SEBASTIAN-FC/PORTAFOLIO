@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Stalactites from '../ui/Stalactites';
 import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 import './About.css';
@@ -79,9 +80,14 @@ export default function About() {
               </div>
             </div>
 
-            <a href="#contacto" className="btn btn-primary about__cta" id="about-cta">
-              Hablemos
-            </a>
+            <div className="about__actions">
+              <a href="#contacto" className="btn btn-primary about__cta" id="about-cta">
+                Hablemos
+              </a>
+              <Link to="/certificados" className="btn btn-ghost about__cta" style={{ marginLeft: '1rem' }} id="about-cta-certs">
+                Ver Certificados
+              </Link>
+            </div>
           </div>
         </div>
       </div>

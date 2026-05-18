@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import './App.css';
 
 // Layout
@@ -8,13 +9,14 @@ import Footer from './components/layout/Footer';
 // UI
 import CaveBackground from './components/ui/CaveBackground';
 
-// Sections
+// Pages / Sections
 import Hero       from './components/sections/Hero';
 import About      from './components/sections/About';
 import Skills     from './components/sections/Skills';
 import Projects   from './components/sections/Projects';
 import Experience from './components/sections/Experience';
 import Contact    from './components/sections/Contact';
+import Certificates from './pages/Certificates';
 
 function App() {
   const [theme, setTheme] = useState(() => {
@@ -37,14 +39,21 @@ function App() {
       {/* Navigation */}
       <Header theme={theme} onToggleTheme={toggleTheme} />
 
-      {/* Main content */}
+      {/* Main content with Routing */}
       <main id="main-content">
-        <Hero />
-        <About />
-        <Skills />
-        <Projects />
-        <Experience />
-        <Contact />
+        <Routes>
+          <Route path="/" element={
+            <>
+              <Hero />
+              <About />
+              <Skills />
+              <Projects />
+              <Experience />
+              <Contact />
+            </>
+          } />
+          <Route path="/certificados" element={<Certificates />} />
+        </Routes>
       </main>
 
       <Footer />

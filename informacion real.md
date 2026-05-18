@@ -235,6 +235,6 @@ https://github.com/JUAN-SEBASTIAN-FC/flowSpace
 
 
  email:
- juansebastianfalla7@gmial.com
+ juansebastianfalla7@gmail.com
  linkedin:
  www.linkedin.com/in/juan-sebastian-falla-cañarte-dev7
